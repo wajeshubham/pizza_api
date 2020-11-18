@@ -13,7 +13,7 @@ _open up your terminal and create virtual environment (make sure you are in the 
 
 now you can see _**env**_ file in your project's directory
 
-_Now install all the necessary packages_
+_**Now install all the necessary packages**_
 
 `pip install -r requirements.txt`
 
