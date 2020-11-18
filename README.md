@@ -43,7 +43,7 @@ size,
 
 shape,
 
-toppings (comma separated words)
+toppings (comma separated words, e.g. : Corn,Tomato,Mushroom,Olives,Onion)
 )
 
 `POST http://127.0.0.1:8000/pizza/`

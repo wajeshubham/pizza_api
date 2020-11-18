@@ -19,8 +19,11 @@ class PizzaListViewset(generics.ListAPIView):
         # here we are taking comma separated toppings name and splitting them at ',' and
         # creating list of the toppings name
         for i in request.data['toppings'].split(','):
-            req_topping = get_object_or_404(Toppings, topping_name=i)
-            pizza.toppings.add(req_topping)
+            req_topping = Toppings.objects.get_or_create(topping_name=i.capitalize())
+            # it will return tuple with (<Toppings instance>,"True (if passwd value is not in database)","False (if
+            # passed value is already present in database)")
+
+            pizza.toppings.add(req_topping[0])  # req_topping[0] gives Toppings instance as req_topping is a tuple
 
         serializer = PizzaSerializer(pizza)
         data = {
