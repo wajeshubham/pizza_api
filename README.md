@@ -1,7 +1,8 @@
 **REST api using DjangoREST framework**
 
 
-#_**Set up virtual environment**_
+##_**Set up virtual environment**_
+
 _open up your terminal and create virtual environment (make sure you are in the project's directory)_
 
 `pip install virtualenv`
@@ -12,13 +13,13 @@ _open up your terminal and create virtual environment (make sure you are in the 
 
 now you can see _**env**_ file in your project's directory
 
-_Now install all the necessary packages_
+_**Now install all the necessary packages**_
 
 `pip install -r requirements.txt`
 
 
 
-#_**Configure your PostgreSQL database**_
+##_**Configure your PostgreSQL database**_
 
 **please go to line no 85 in pizza_api/settings.py and add necessary configs in the 'DATABASES'**
 
@@ -35,14 +36,14 @@ To make sure your models also got migrated run following commands:
 `python manage.py migrate api`
 
 
-#_**Run the project**_
+##_**Run the project**_
 
 _**Now you can run the project by following command:**_
 
 `python manage.py runserver`
 
 
-#_**ENDPOINTS (URLS) :**_
+##_**ENDPOINTS (URLS) :**_
 _**(use postman for sending requests)**_
 
 create a pizza order:
