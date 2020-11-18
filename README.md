@@ -1,7 +1,7 @@
 **REST api using DjangoREST framework**
 
 
-
+#_**Set up virtual environment**_
 _open up your terminal and create virtual environment (make sure you are in the project's directory)_
 
 `pip install virtualenv`
@@ -18,24 +18,35 @@ _Now install all the necessary packages_
 
 
 
-_**Configure your PostgreSQL database**_
+#_**Configure your PostgreSQL database**_
 
 **please go to line no 85 in pizza_api/settings.py and add necessary configs in the 'DATABASES'**
 
-After setting up the database you have to make migrations to the database, run following commands to make migrations
+After setting up the database you have to make migrations to the database, run following commands to make migrations:
 
 `python manage.py makemigrations`
 
 `python manage.py migrate`
 
-_**Now you can run the project by following command**_
+To make sure your models also got migrated run following commands:
+
+`python manage.py makemigrations api`
+
+`python manage.py migrate api`
+
+
+#_**Run the project**_
+
+_**Now you can run the project by following command:**_
 
 `python manage.py runserver`
 
-_**ENDPOINTS (URLS) :**_
+
+#_**ENDPOINTS (URLS) :**_
+_**(use postman for sending requests)**_
 
 create a pizza order:
-(fields uou have to pass in postman:
+(fields you have to pass in request.data:
 
 customer_name,
 
@@ -43,7 +54,7 @@ size,
 
 shape,
 
-toppings (comma separated words, e.g. : Corn,Tomato,Mushroom,Olives,Onion)
+toppings (comma separated values, e.g. : Corn,Tomato,Mushroom,Olives,Onion)
 )
 
 `POST http://127.0.0.1:8000/pizza/`
@@ -58,7 +69,7 @@ get pizza order by size: (size options: (small/medium/large))
 
 get pizza order by shape: (shape options: (regular/square))
 
-`GET http://127.0.0.1:8000/pizza/size/<shape_you_want>/`
+`GET http://127.0.0.1:8000/pizza/shape/<shape_you_want>/`
 
 delete a pizza order: (you have to pass id of pizza on the place of <id_of_pizza>)
 
